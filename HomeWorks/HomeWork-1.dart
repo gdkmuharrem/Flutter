@@ -7,8 +7,10 @@
 import 'dart:io';
 
 void main(){
-
-  print("Celsius to Fahrenheit botuna hoş geldiniz.");
+  
+  print("------------------------------------------");
+  print("Celsius to Fahrenheit Botuna Hoş Geldiniz.");
+  print("------------------------------------------");
   print("Lütfen dönüştürmek istediğiniz Celcius değerini giriniz.");
   double derece = double.parse(stdin.readLineSync()!);
   print("Girdiğiniz derecenin karşılığı : ");
