@@ -7,7 +7,9 @@
 import 'dart:io';
 
 void main (){
+  print("----------------------------------------------");
   print("Dikdörtgen Çevre Hesabı Botumuza Hoş Geldiniz.");
+  print("----------------------------------------------");
   print("Lütfen çevresini hesaplamak istediğiniz dikdörtgenin kenarlarını giriniz.");
   print("Uzun kenar : ");
   int uznknr = int.parse(stdin.readLineSync()!);
