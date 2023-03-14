@@ -1,6 +1,10 @@
 /*
-  HomeWork-4
+  HomeWork-6
   ----------
-  4.Parametre olarak girilen kelime ve harf için harfin kelime içinde kaç adet olduğunu gösteren method yazınız.
+  6.Parameter olarak girilen gün sayısına göre maaş hesabı yapan ve elde edilen değeri geri döndüren method yazınız.
+      [1 Günde 8 saat çalışılabilir.]
+      [Çalışma saat ücreti : 10TL]
+      [Mesai saat ücreti : 20TL]
+      [160 saat üzeri mesai sayılır.]
   ----------
 */
