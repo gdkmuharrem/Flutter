@@ -1,6 +1,6 @@
 /*
-  HomeWork-4
+  HomeWork-5
   ----------
-  4.Parametre olarak girilen kelime ve harf için harfin kelime içinde kaç adet olduğunu gösteren method yazınız.
+  5.Parametre olarak girilen kenar sayısına göre iç açılar toplamını hesaplayan sonucu geri gönderen method yazınız.
   ----------
 */
