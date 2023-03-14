@@ -1,6 +1,8 @@
 /*
-  HomeWork-4
+  HomeWork-7
   ----------
-  4.Parametre olarak girilen kelime ve harf için harfin kelime içinde kaç adet olduğunu gösteren method yazınız.
+  7.Parametre olarak girilen kota miktarına göre ücreti hesaplayarak geri döndüren metodu yazınız.
+      [50GB 100TL]
+      [Kota aşımı sonrası her 1GB 4TL]
   ----------
 */
