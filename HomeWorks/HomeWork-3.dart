@@ -13,6 +13,11 @@ void main (){
   print("-------------------------------------------");
   print("Lütfen faktoriyelini hesaplamak istediğiniz sayıyı giriniz.");
   int sayi = int.parse(stdin.readLineSync()!);
+  faktoryelhesap(sayi);
+
+}
+
+void faktoryelhesap(int sayi){
   int faktoryel = 1;
 
   for(int i = 2;i<=sayi;i++){
