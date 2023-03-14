@@ -17,17 +17,16 @@ void main(){
   print("----------------------------------");
   print("Lütfen bu ay kaç gün çalıştığınızı giriniz.");
   int gun = int.parse(stdin.readLineSync()!);
-  print(maas(gun));
+  if(maas(gun) !=0){
+    print("Almanız gereken ödeme : ${maas(gun)}");
+  }
 
 }
 
 int maas(int gun){
   int sonuc = 0;
-  if(gun>20){
-    sonuc = 20*8*10 + (gun-20)*8*20;
-  }
-  if(gun<20){
-    sonuc = 10*8*gun;
-  }
+  if (gun>31){print("Ters bir şeyler oldu. Bir ayda max 31 gün bulunmaktadır !!!");}
+  if(gun>20 && gun<=31){sonuc = 20*8*10 + (gun-20)*8*20;}
+  if(gun<20){sonuc = 10*8*gun;}
   return sonuc;
 }
