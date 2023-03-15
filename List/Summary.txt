@@ -1,0 +1,93 @@
+**********************************************************************************************
+----------------------------------------------------------------------------------------------
+**********************************************************************************************
+
+------
+List :
+------
+	+Aynı türden verileri bir arada tutar.
+	+İndex numaraları sıfırdan başlar.
+	+Veri eklendikçe otomatik olarak boyutu artar.
+
+**********************************************************************************************
+----------------------------------------------------------------------------------------------
+**********************************************************************************************V
+
+-----------------------------
+Liste Tanımlama Yöntemleri :
+-----------------------------
+    1-) var iller = <String>[];
+
+    2-) var plakalar = [16,34,5];
+
+
+	Örnek Tanımlama:
+        ----------------------------------
+        var meyveler = <String>[];
+        meyveler.add = ("Çilek");
+        meyveler.add = ("Muz");
+        meyveler.add = ("Elma");
+        meyveler.add = ("Kivi");
+        meyveler.add = ("Kiraz");
+
+        İndis		Değer
+          0		Çilek
+          1		Muz
+          2		Elma
+          3		Kivi
+          4		Kiraz		Listemiz bu şekilde olur.
+        -----------------------------------
+
+**********************************************************************************************
+----------------------------------------------------------------------------------------------
+**********************************************************************************************
+
+----------------------------------
+List'de kullanılan bazı metodlar :
+----------------------------------
+
+    add()  -->  Bu metod ile listenin "SONUNA" ekleme yapabiliriz.
+
+    insert()  -->  Bu metor ile listede ekleme yapmak istediğimiz index numarasını yolluyoruz
+ve eklemek istediğimiz veri istediğimiz index numarasına atanıyor ve o indexte olan veriden itibaren
+sonuna kadar tüm verilerin indexleri bir sonrakine atanıyor. Yani "ARAYA" veri ekleme yapabiliyoruz.
+
+    isEmpty  -->  Listemizin dolu olup olmadığını sorgulayan metottur. Eğer dolu ise "false",
+boş ise "true" değeri döndürür.
+
+    length  -->  Listemizin içeriğindeki elemanların toplam sayısını verir. int değer döndürür.
+
+    first  -->  Listemizin İLK elemanını bize geri döndürür.
+
+    last  -->  Listemizin SON elemanını bize geri döndürür.
+
+    contains("ARANAN_ELEMAN")  --> Listemizin içerisinde var olup olmadığını merak ettiğimiz
+elemanı listede arar ve eğer aradığımız eleman listede;
+    varsa "true",
+    yoksa "false" değer döndürür.
+
+    reversed  -->  Listemizin içeriğindeki elemanların tamamını ters çevirir. Yani mesela
+[0,1,2,3,4] elemanlarına sahip bir listemiz varsa bunu reversed ile [4,3,2,1,0] haline çeviririz.
+
+    sort()  -->  Listemizin içeriğindeki verileri String veriler ise alfabeye göre sayısal
+veriler ise sayısal sıraya göre sıralamaya yarar. Bu metod hakkında önemli bilgi:
+        PRİNT İÇERİSİNDE SORT METODUNU KULLANAMAYIZ !!!
+
+    removeAt(indexNumarası)  -->  Listemizin içerisinden istediğimiz indexe sahip elemanımızı
+silmemizi sağlar. Bu metod hakkında önemli bilgi :
+        PRİNT İÇERİSİNDE REMOVEAT METODUNU KULLANAMAYIZ !!!
+
+    remove(elemanAdi)  -->  Listemizden istediğimiz elemanı silmemizi sağlar. Bu elemanın
+index değerini bilmemize gerek yoktur. Sadece listemizin içeriğinde mevcut olduğunu bilmemiz
+yeterlidir.Bu metod hakkında önemli bilgi:
+        PRİNT İÇERİSİNDE REMOVE METODUNU KULLANAMAYIZ !!!
+        SİLİNMEK İSTENEN ELEMANIN AYNISINDAN BİRDEN FAZLA VARSA HEPSİNİ SİLER !!!
+
+    clear()  -->  Listemizin içeriğini tamamen temizlememize, silmemize yarayan metotdur.
+Bu metod hakkında önemli bilgi:
+        PRİNT İÇERİSİNDE CLEAR METODUNU KULLANAMAYIZ !!!
+
+**********************************************************************************************
+----------------------------------------------------------------------------------------------
+**********************************************************************************************
+
