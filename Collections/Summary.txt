@@ -122,3 +122,44 @@ List Iterating - DÖNGÜLER İLE LİSTELER :
 **********************************************************************************************
 ----------------------------------------------------------------------------------------------
 **********************************************************************************************
+
+----------------------------------------
+List ile Nesne Calısması :
+----------------------------------------
+
+    ilk olarak Ogrenciler sınıfımızı tanımladık ve içerisinde değişkenlerimizi tanımladık.
+
+    Daha sonra constructorumuzu tanımladık ve bunun sayesinde artık herhangi bir yerden sınıfımız
+kullanılmak istenirse direkt olarak değişkenlerimizin değerlerini yollamak zorunda kalacak.
+
+    Sonra main dosyamızı açtık ve ana çalışacak kodlarımızı yazmaya başladık.
+        main dosyamızda normal nesne yapısında yaptığımız gibi classımıza ait o1,o2,o3 isimli 3 nesne
+tanımladık. Bu nesnelerimize tanım aşamasında constructorumuz zorunlu tuttuğu için değişken değerlerini
+yolladık.
+    var o1 = Ogrenciler(100, "Muharrem", "UNİ-2");
+    var o2 = Ogrenciler(101, "Ahmet", "LİSE-MEZUN");
+    var o3 = Ogrenciler(102, "Zeynep", "7-F");
+
+
+    Daha sonra liste ve nesne yapısını birleştirmek adına ogrenciler isimli bir liste oluşturduk ve
+içerisinde tutacağı veri türüne classımızı yazdık. Bu sayede classımızın nesnelerinin tanımları
+int,String tarzı değilde classımız ile tanımlı olduğu için listemizin elemanlarına classımızın
+nesnelerini ekleyebildik. Bu sayede list yapısıyla nesne programlamayı birleştirmiş olduk.
+    var ogrenciler = <Ogrenciler>[o1,o2,o3];
+
+
+    En son olarak tüm listeyi dolaşıp listemizdeki elemanların değişken değerlerini ekrana basmak
+için bir for in döngüsü kurduk.
+    for (var o in ogrenciler){
+        print("**********");
+        print("Öğrenci no : ${o.no}");
+        print("Öğrenci ad : ${o.ad}");
+        print("Öğrenci sınıf : ${o.sinif}");
+      }
+
+**********************************************************************************************
+----------------------------------------------------------------------------------------------
+**********************************************************************************************
+
+
+
