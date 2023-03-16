@@ -91,3 +91,34 @@ Bu metod hakkında önemli bilgi:
 ----------------------------------------------------------------------------------------------
 **********************************************************************************************
 
+----------------------------------------
+List Iterating - DÖNGÜLER İLE LİSTELER :
+----------------------------------------
+
+    for (var m in listeIsmi){print (m);}  Döngüsü :
+
+        Bu döngümüzde listemizin içerisindeki elemanları tek tek m ismini verdiğimiz değişkene
+    aktarıyoruz ve eğer listemizi ekrana basmak istersek tek print ile içerisine m değişkenini
+    atmamız yeterli. Çünkü for döngüsü listeyi tamamen gezene kadar çalışmaya devam edecek.
+    Her çalışma tekararında m değişkenine aktarılan elemanı ekrana basarsak listeyi ekrana
+    basmış oluyoruz.
+
+
+    for (var i=0;i<listeIsmi.length();i++){print("$i. indisli eleman : ${listeIsmi[i]}")} Döngüsü :
+
+        Bu döngümüzde ise i isimli ilk değeri 0 olan bir değişken oluşturuyoruz. i değişkenimiz
+    listemizin eleman sayısından küçük olduğunu sürece for döngüsünün çalışmasını ve
+    her çalıştığında i değerimizi 1 arttırmasını istediğimizi söylüyoruz.
+    Bunu yapmamızın sebebi :
+        Listemizin kaç elemanlı liste olduğunu bilemeyiz, bilsek bile bunu her liste için hesaplamak
+    bizden çok zaman çalacaktır. Elbette tek sebebi bu değil, aynı zamanda listemizin her elemanının
+    hangi indise sahip olduğunu da öğrenebilmek için sayac tarzı bir değişkene ihtiyacımız var.
+    Bu sebeplerden dolayı i değişkenini oluşturduk.
+    Daha sonra i değişkenimizi her değerini 0'dan başlayıp listemizin son elemanına gelen kadar
+    ekrana basıyoruz. 0,1,2,3,4.... bu ekrana basma işlemi sırasında, index sayacımızı oluşturduğumuza
+    göre sıra elemanları ekrana basmaya geliyor. Bu işlemi de "listeIsmi[i]" ile yapıyoruz.
+    Amacımız 0. indisten son indise kadaar hepsini gezmek.
+
+**********************************************************************************************
+----------------------------------------------------------------------------------------------
+**********************************************************************************************
