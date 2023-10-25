@@ -1,0 +1,48 @@
+AppBar üzerinde ortaya çıkan ve hali hazırda aygıtın kendisinde fiziksel olarak bulunan
+geri dönüş tuşlarını kodlayabiliriz.
+
+AppBar'daki geri tuşunu kodlayabilmek için leading ve IconButton kod yapılarını kullanıyoruz.
+
+Kullanımı:
+	leading: IconButton(
+          onPressed: (){
+            print("AppBar geri tuşu tıklandı");
+            Navigator.of(context).popUntil((route) => route.isFirst);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
+
+Yukarıda IconButton ve onpressed ile geri butonuna tıklandığında ne yapmasını istediğimizi
+öğretiyoruz. 
+
+	Navigator.of(context).popUntil((route) => route.isFirst);
+
+bu kod bloğu ile anasayfaya geri dönüyorduk. Bu kodlama sonucu geri tuşuna tıklandığında 
+otomatikmek uygulama sanki yeni açılmış gibi anasayfaya gidecektir.
+----------------------------------------------------------------------------------------------
+
+Eğer telefonun fiziksel olarak sahip olduğu geri dönüş tuşuna bir kodlama yapmak istiyor isek;
+Öncelikle kod bloğumuzun başında yani State yapımızın hemen altında bir kodlama yapmamız 
+gerekmekte ve bu kod bloğunda "Future" yapısını kullanarak yapmak istediğimiz işlemi 
+tanımlamamız gerekmektedir.
+
+Kullanımı :
+
+	Future<bool> geriDonusTusu(BuildContext context) async {
+    		print("Geri Tuşu Tıklandı");
+    		return false; //Eğer false olursa geri dönüş yapmaz, true olursa yapar.
+  	}
+
+Yukarıda kurduğumuz kod bloğu ile Future yapısı ile geriDonusTusu isimli bir değişken 
+oluşturup asenkron bir şekilde tanımlıyoruz ve geri dönüş türü olarak da bool yani True,false
+tanımlıyoruz. Daha sonra altına da mesaj olarak seri ekrana geri tuşuna tıklandı yazması için
+print metodunu kullanıyoruz. Son olarak geri dönüş türünü false yapıyoruz ki tuşa tıklandığında 
+geri dönüş yapmasın. Eğer true yaparsak normal işlevine dönmüş oluyor.
+
+Son olarak yaptığımız bu yapıyı kod bloğumuzun içerisine dahil etmemiz gerekmekte. Bunun için
+de WillPopScope yapısından yardım alıyoruz.
+Kullanımı : body içerisinde en başa alt+enter ile widget ekliyoruz ve WillPopScope widgetimizi 
+yazıyoruz. Son olarak alt satıra inip : 
+			onWillPop: () => geriDonusTusu(context),
+yapısından da faydalanarak yukarıda yaptığımız kodları sistemimize dahil etmiş oluyoruz.
+
