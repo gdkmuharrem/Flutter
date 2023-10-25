@@ -1,0 +1,114 @@
+*************************
+        Expanded
+*************************
+*widget bulunduğu alanda Row içindeyse yatayda, Column içindeyse dikeyde;
+	boş olan alana doğru yayılır.
+
+*istersek flex özelliği ile %kaç yayılacağını da belirleyebiliyoruz.
+
+********************************************************************************************
+                              ÖRNEK KODLAMA
+********************************************************************************************
+body: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+              flex: 30,
+              child: Container(width: 100,height: 100,color: Colors.red,)),
+          Expanded(
+              flex:70,
+              child: Container(width: 100,height: 100,color: Colors.blue,)),
+        ],
+      ),
+
+
+*************************
+    Widget Customize
+*************************
+Mavi Kare
+---------
+class MaviKare extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Container(width: 50,height: 50,color: Colors.blue,);
+  }
+}
+
+şeklinde bir class oluşturuyoruz ve artık widgetımızı özelleştirmiş oluyoruz.
+Eğer MaviKare() yazar isek kod bloğumuzun içinde bize direk 50*50 mavi bir kare getirecektir.
+
+
+Yazı
+-----
+class Yazi extends StatelessWidget {
+  String icerik;
+  double yaziBoyutu;
+ 
+  Yazi(this.icerik,this.yaziBoyutu);  // Constructor
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(icerik,style: TextStyle(fontSize: yaziBoyutu),);
+  }
+}
+
+
+şeklinde yazıyı tanımlıyoruz ve içerisine constructor tanımlayarak çağrıldığı yerden içerisine 
+yazı ve boyutunun parametrelerinin verilmesi gerektiğini söylüyoruz.
+
+Normal bir yazının boyutunu ayarlamak için;
+	Text("YAZI", style: TextStyle(fontSize: YAZIBOYUTU),)
+
+şeklinde tanımlama yapmamız gerekmekte.
+
+********************************************************************************************
+                              ÖRNEK KODLAMA
+********************************************************************************************
+body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MaviKare(),
+            SizedBox(height: 10,),
+            KirmiziKare(),
+            SizedBox(height: 10,),
+            Yazi("İyi geceler babacığım", 33.0)
+          ],
+        ),
+      ),
+
+
+class MaviKare extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Container(width: 50,height: 50,color: Colors.blue,);
+  }
+}
+
+class KirmiziKare extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(width: 50,height: 50,color: Colors.red,);
+  }
+}
+
+class Yazi extends StatelessWidget {
+  String icerik;
+  double yaziBoyutu;
+
+  Yazi(this.icerik,this.yaziBoyutu);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(icerik,style: TextStyle(fontSize: yaziBoyutu),);
+  }
+}
+
+
+
+
+
+
+
+
+
