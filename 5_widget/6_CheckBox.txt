@@ -1,0 +1,24 @@
+checkbox kullanimi :
+--------------------
++Çoklu seçim yapılırken kullanılan widgettir.
++Birden fazla checkbox kutusu yani seçilebilir buton gibi bir şey kullanabiliyoruz istersek tabi tek de
+kullanabilmekteyiz.
++Biz projemizde 2 tane checkbox olsun ve bunların içerisinde kotlin ve dart yazılı olsun istiyoruz.
+
++İlk olarak kotlinDurum ve dartDurum olmak üzere bool türünde 2 değişken tanımlamamız gerekmekte çünkü 
+checkbox'ın değerini taşıyıp o değerle işlem yaptırabilmek için değişken yapısına ihtiyacımız var.
+
+
+Kullanımı :
+----------------
+	CheckboxListTile(
+              title: Text("Kotlin"),
+              value: kotlinDurum,
+              controlAffinity: ListTileControlAffinity.leading, //check edilebilir kısmı sol tarafa getirmeye yarıyor.
+              onChanged: (bool? veri){
+                print("Kotlin seçildi : $veri");
+                setState(() {
+                  kotlinDurum = veri!;
+                });
+              },
+            ),
