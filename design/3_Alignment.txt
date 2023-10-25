@@ -1,0 +1,69 @@
+********************************************************************************************************************
+	Main-Axis-Alignment	-->	Yalnızca Row veya column içerisinde değilde Tüm Sayfa boyunca hizalama yapabilmek için.
+  Croos-Axis-Alignment	-->	Tüm Sayfa boyunca değilde Yalnızca Row veya column içerisinde hizalama yapabilmek için.
+********************************************************************************************************************
+
+Main-Axis-Alignment Kullanımı:
+--------------------------------
+*Row veya Column altında hemen başta tüm widgetlara etki edecek şekilde şu şekildedir:
+	
+	mainAxisAlignment: MainAxisAlignment.center,		--> Mesela bu kod sayesinde tüm widgetlar ortalanmış olacak.
+
+	Row için  Diğer kullanımları : 
+			+start	--> varsayılan (sol üst)
+			+end	--> en sağ
+			+center	--> orta
+			+spaceBetween	--> Boşluk bırakarak ayırır.
+			+spaceEvenly	--> Eşit boşluklar bırakarak ayırır.
+
+	Column için  Diğer kullanımları : 
+			+start	--> varsayılan (sol üst)
+			+end	--> sol en alt
+			+center	--> orta
+			+spaceBetween	--> Boşluk bırakarak ayırır.
+			+spaceEvenly	--> Eşit boşluklar bırakarak ayırır.
+
+
+
+Croos-Axis-Alignment Kullanımı:
+--------------------------------
+*Row veya Column altında hemen başta tüm widgetlara etki edecek şekilde şu şekildedir:
+	
+	crossAxisAlignment: CainAxisAlignment.center,		--> Mesela bu kod sayesinde kullanıldığı row veya column widgetları ortalanmış olacak.
+
+	Row için  Diğer kullanımları : 
+			+start	--> varsayılan (En üste yapışık)
+			+end	--> en alta yapışık
+			+center	--> orta
+			+stretch --> Tüm sütun boyunca
+
+	Column için  Diğer kullanımları : 
+			+start	--> varsayılan (sola yapışık)
+			+end	--> sağa yapışık
+			+center	--> orta
+			+stretch --> Tüm Satır boyunca
+
+
+
+ÖRNEK KODLAMA
+*********************************************************************************************************
+body:Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(width: 100,height: 100,color: Colors.blue,),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(width: 80,height: 80,color: Colors.red,),
+              Container(width: 50,height: 50,color: Colors.blue,),
+              Container(width: 100,height: 100,color: Colors.yellow,),
+            ],
+          ),
+        ],
+      ),
+*********************************************************************************************************
+
