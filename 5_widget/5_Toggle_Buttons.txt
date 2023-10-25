@@ -1,0 +1,24 @@
+toggle buttons kullanımı:
+---------------------------
+	+İlk olarak 2 adet değişken oluşturduk biri var türünde diğeri int türünde.
+	+Bu değişkenlerden var türünde olan değişkenimizi bir liste olarak dizi olarak kullandık.
+butonların true ve false değerlerini tutması için.
+	+int türünde olan değişkenimizi ise index değişkeni olarak ayarladık ki diziden istediğimiz indexe
+sahip olan butonun değerini değiştirebilelim ya da görüntüleyebilelim.
+	+Daha sonra body içersinde ToggleButtons() tanımlamamızı yapmaya geldi sıra.
+	+children oluşturarak buton sayımız kadar icon tanımladık sırasıyla.
+	+children dışında isSelected() fonksiyonumuzu çağırdık ve değer olarak oluşturduğumuz diziyi tanımladık.
+u fonksiyon aracılığı ile hangi butonların seçili olup olmadığını öğrenebiliyoruz.
+	+ onPressed metodu ile seçildiğinde gelen index değerini başta index olarak kullanmak için tanımladığımız
+değişkene aktardık ve bunların hepsini set state içerisinde sayfayı yenileyerek yaptık. Aynı zamanda bir kontrol
+sistemi yazdık. Eğer seçilen indexin değeri neyse onu ! işareti ile tam tersine çevirdik. Yani true ise false
+false ise true değerine çeviridk.
+	+Son olarak bunları print ettik.
+	+En sonda içerisinde göster yazan bir buton ile tıklandığında ekrana aynı print değerini yazmasını sağladık.
+Son kalınan index değerini ekrana basmayı sağladı.
+
+
+	Ek olarak tasarımsal bazı şeyler:
+		+isSelected fonksiyonumuzun peşine color,selectedColor,fillColor gibi tasarımsal işlevler kazandırdık.
+Bunlardan color false durumundaki rengi, selectedColor true durumundaki rengi, fillColor true durumundaki
+arka plan rengini değiştirdi.
