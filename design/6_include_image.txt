@@ -1,0 +1,25 @@
+Projemize resim eklemek için öncelikle projemize bir directory ekliyoruz.
+Karışmaması için bu directorynin adını resimler veya images yapıyoruz.
+
+Daha sonra projemize eklemek istediğimiz resmi kopyalayıp 
+bu dosyanın üstüne tıklayarak yapıştır diyoruz ve onay kutusunun onaylıyoruz.
+
+Daha sonra pubspec.yaml dosyamızın içeriğine gidip assets: kısmının önündeki
+# kısmını siliyoruz.
+Assets'in altında - ile yolumuzu belirtiyoruz. Mesela: resimler/dijital.jpg
+
+daha sonra pubspec dosyasındayken sağ üstte bulunan (pub get) butonuna basıyoruz,
+bu sayede eklemek istediğimiz resmi projemize tanıtmış oluyoruz.
+
+Daha sonra tekrar main.dart dosyamıza gidip body kısmında resmimizi şu şekilde kullanıyoruz:
+Image.asset("resimler/dijital.jpg"),	şeklinde kullanıyoruz ve artık resmimiz kullanılabilir.
+
+********************************************************************************************
+                              ÖRNEK KODLAMA
+********************************************************************************************
+body: Column(
+        children: [
+          Image.asset("resimler/dijital.jpg"),
+          Text("Dijital Dünya")
+        ],
+      ),
