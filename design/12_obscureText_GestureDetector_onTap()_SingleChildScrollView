@@ -1,0 +1,47 @@
+*************************
+      obscureText
+*************************
+TextField içerisine şifre girileceği zaman ya da gizlenmesi 
+gereken bir bilgi alınacağı zaman obscureText özelliğini aktif 
+edip true değeri vererek saklayabiliriz.
+
+Kullanımı: TextField'ın hemen en başında kullanılır.
+
+	TextField(
+		obscureText: true,
+	),
+
+*************************************
+      GestureDetector/ onTap()
+*************************************
+Bir metne veya bir nesneye buton gibi basılıp basılmadığını
+kontrol etmek ve basıldığında bir görevi,fonksiyonu çalıştırmak
+için GestureDetector kullanılır.
+
+onTap GestureDetector'un basıldığında işlem yapması için gereken
+fonksiyondur.
+
+Kullanımı:
+
+	GestureDetector(
+		onTap: (){print("Yardım Seçildi.");},
+		child: Text("Yardım ?"),
+	),
+
+Yukarıdaki örnekte yardım yazısına tıklandığında seri ekrana
+Yardım seçildi diye bir yazı basacaktır.
+
+***********************************
+      SingleChildScrollView
+***********************************
+Ekranımızda taşmalar olduğunda ya da klavyeye tıklandığında 
+arka plandaki yazılar,görseller,tasarımlar tam olarak
+görünmemekte ve sıkışmakta.
+
+Eğer default olarak kalırsa bize ekran uyarı vermekte.
+
+Bu hatanın önüne geçebilmek için direk kod bloğumuzun başına
+column yapısının üstüne SingleChildScrollView widget'i ekliyoruz
+ve bu sayede artık ekranda yukarı aşağı kaydırma yapabiliyoruz.
+
+
