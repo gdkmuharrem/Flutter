@@ -1,0 +1,34 @@
+*************************
+      setState()
+*************************
+setState() Metodu --> Kullanıldığı yerde tüm sayfanın yeniden build edilmesini 
+yani tasarımın yeniden baştan çalıştırılmasını sağlar.
+
+!!!!!!!!!!!!!  Yalnızca Stateful Widgetlarda kullanılabilir. !!!!!!!!!!!!
+
+Örnek kullanım olarak buton yapısını düşünebiliriz.
+
+Mesela klasik yöntemde butona her basıldığında ekrana basılan sonucun artması 
+istenen projede butona basıldığında değişken 1 arttırılıp texte yazılırdı. 
+Fakat bu metod ile her butona basıldığında değişken 1 artıyor ve sayfa yeniden 
+başlatılıyor. Bu sayede sonucu ekrana basan text ile oynanmamış oluyor.
+
+*************************
+    Stateful widget
+*************************
+
+Arayüzde tekrar tekrar değişiklik yapabileceğimiz widgetlardır.
+Build metodu arayüzdeki her değişimde çalışır, setState() metodun'da anlatmıştık.
+State özelliği bu yapı ile kullanılabilmektedir.
+
+	  State özelliğini kullanabilmek için StatefulWidget özelliği olan bir
+	sayfa olmalı ve bu sınıfı implemente etmeliyiz. Bundan dolayı iki sınıf
+	ile çalışmaktayız.
+
+	1-StatefulWidget özelliği olan sınıf ve 2- State<StatefulWidget> özelliği 
+	olan sınıf.
+
+StatefulWidget örnek olarak : Button,Checkbox,TextField vb.
+Bu widgetlar bir durumu değiştirebilir örnek olarak butona basınca bir işlem yapılabilir.
+
+
