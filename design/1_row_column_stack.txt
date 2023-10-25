@@ -1,0 +1,112 @@
+Row -->  	Yan yana aynı satır
+Column --> 	Alt alta yani aynı sütun
+Stack -->	İç içe
+
+Row
+-------
+*widgetların yan yana durmasını sağlar.
+*Varsayılan başlangıç noktası sol üst Köşedir.
+*Boyutu içindeki widgetlara göre değişmektedir.
+
+-Kodlmasını body içerisinde yapıyoruz.
+-Row() diye paranteze başlıyoruz.
+-children:[] dizisini row parantezinin içine ekliyoruz.
+-Container widgeti ile width,hight,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+-------
+
+Column
+-------
+*Widgetlerin alt alta durmasını sağlar.
+*Varsayılan başlangıç noktası sol üst köşedir.
+*Boyutu içindeki widgetlara göre değişmekte.
+
+-Kodlmasını body içerisinde yapıyoruz.
+-Column() diye paranteze başlıyoruz.
+-children:[] dizisini column parantezinin içine ekliyoruz.
+-Container widgeti ile width,hight,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+-------
+
+Stack
+-------
+*widgetların üst üste durmasını sağlar.
+*İlk eklenen en altta yer alır.
+*Varsayılan başlangıç noktası sol üst Köşedir.
+*Boyutu içindeki widgetlara göre değişmektedir.
+
+-Kodlmasını body içerisinde yapıyoruz.
+-Stack() diye paranteze başlıyoruz.
+-children:[] dizisini stack parantezinin içine ekliyoruz.
+-Container widgeti ile width,hight,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+-------
+
+
+Row-Column-Stack   Birlikte kullanımları
+---------------------------------------------------------------
+
+*ROW+Column
+
+-Kodlmasını body içerisinde yapıyoruz.
+-Row() diye paranteze başlıyoruz.
+-children:[] dizisini row parantezinin içine ekliyoruz.
+-Container widgeti ile width,height,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+-Containerların altına Column() diye paranteze başlıyoruz.
+-children:[] dizisini column parantezinin içine ekliyoruz.
+-Container widgeti ile width,height,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+
+
+*Column+Row
+
+-Kodlmasını body içerisinde yapıyoruz.
+-Column() diye paranteze başlıyoruz.
+-children:[] dizisini column parantezinin içine ekliyoruz.
+-Container widgeti ile width,height,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+-Containerların altına Row() diye paranteze başlıyoruz.
+-children:[] dizisini row parantezinin içine ekliyoruz.
+-Container widgeti ile width,height,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+
+*Stack+Row+Column
+
+-Kodlmasını body içerisinde yapıyoruz.
+-Stack() diye paranteze başlıyoruz.
+-children:[] dizisini stack parantezinin içine ekliyoruz.
+-Container widgeti ile width,height,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+-Containerların altına Row() diye paranteze başlıyoruz.
+-children:[] dizisini row parantezinin içine ekliyoruz.
+-Container widgeti ile width,height,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+-Containerların altına Column() diye paranteze başlıyoruz.
+-children:[] dizisini column parantezinin içine ekliyoruz.
+-Container widgeti ile width,height,color değerleri veriyoruz
+-containerlerin hepsini virgül ile ayırıyoruz.
+
+
+
+ÖRNEK KODLAMA
+********************************************************************************
+body:
+      Stack(
+        children: [
+          Container(width: 400,height: 400,color:Colors.brown),
+          Row(
+            children: [
+              Container(width: 100,height: 100,color: Colors.red ,),
+              Container(width: 100,height: 100,color: Colors.amberAccent,),
+              Column(
+                children: [
+                  Container(width: 100,height: 100,color: Colors.teal ,),
+                  Container(width: 100,height: 100,color: Colors.white ,),
+                ],
+              )
+            ],
+          ),
+        ],
+      ),
+********************************************************************************
