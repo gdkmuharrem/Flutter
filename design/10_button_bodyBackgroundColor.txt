@@ -1,0 +1,37 @@
+Buton eklemek istediğimiz zaman "ElevatedButton()" özelliğinden faydalanıyoruz.
+
+Kullanımı : 
+	
+	ElevatedButton (
+		onPressed: (){
+			print("Button'a basıldı.);
+			},
+		child: 
+			Text("Buton'a BAS"),
+	),
+-----------------------------------------------------------------------------------
+İçerisindeki onPressed özelliği ile buton'a tıklandığında çalışmasını istediğimiz 
+fonksiyonu yazıyoruz.
+
+Onun dışında child ile istediğimiz widgetları ekleyebilmekteyiz.
+
+
+body BackGround Color
+---------------------------------------------------------------------------------------------------------------------------
+
+scaffold altına hemen,
+	"backgroundColor = Colors.blueGray,"
+dersek tüm sayfamıza bir arkaplan rengi vermiş oluruz.
+
+Kullanımı : 
+	
+	return Scaffold(
+      //Bu alana eklediğimiz herşey tüm sayfa için geçerli olacaktır.
+      backgroundColor = Colors.blueGray,
+ 
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text("Hello World!"),
+      ),
+      body: Center(....
+      ),
