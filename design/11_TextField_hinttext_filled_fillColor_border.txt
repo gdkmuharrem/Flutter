@@ -1,0 +1,58 @@
+*************************
+      TextField
+*************************
+
+Kullanıcı adı gibi şifre gibi bilgileri girebileceğimiz,
+tıklandığında klavye açan ve kullanıcıdan input aldığımız kutucukları
+
+	"TextField(),"      ile oluşturuyoruz.
+
++TextField içerisinde bazı dekorasyon işlemlerimiz olacak.
++Bu dekorasyon işlemlerinin sebebi görsel açıdan etik olması ve
+kullanıcıya bilgi vermektir.
+
+Mesela TextField boxımızın içerisinde yazı olmasını,
+bu yazının rengini değiştirmeyi, etrafında radyus olmasını
+bu gibi özelliklerin hepsini decorasyon ile ekleyeceğiz.
+-------------------------------------------------------------
+Kullanımı:
+
+TextField(
+	decoration: InputDecoration(
+		hintText: "Kullanıcı Adı"i
+		filled: true,
+		fillColor: Colors.white,
+		border: OutLineInputBorder(
+			borderRadius: BorderRadius.all(
+				Radius.circular(20.0),
+      ),
+    ),
+  ),
+),
+-----------------------------------------------------------
+Yukarıdaki kodlardan daha önce açıklamasını yapmadığım bazı
+kodlar bulunmakta :
+    
+        *************************
+              border
+        *************************
+        border -->  Bir nesneye radyus eklemek istediğimiz zaman yani 
+        etrafında yuvarlağımsı kesikler oluşturmak istediğimiz
+        zaman border özelliğinden faydalanıyoruz.
+        
+        *************************
+              hinttext
+        *************************
+        hintText --> 	TextField içerisinde yazmasını istediğimiz
+        yazıyı barındırır.
+        
+        *************************
+              filled
+        *************************
+        filled -->	TextField'ın rengini ayarlayabilmek için
+        ilk olarak bu özelliği true yapmamız gerekmekte.
+        
+        *************************
+              fillColor
+        *************************
+        fillColor -->	TextField'ın rengini belirlememezi sağlar.
