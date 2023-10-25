@@ -1,0 +1,31 @@
+Sayfalar arası geçiş için "Navigator" yapısı kullanılır.
+
+Navigator.push(context, MaterialPageRoute(builder: (context) => SayfaA() ));
+
+Bu kod bloğunun içersindeki SayfaA() gidilmek istenen sayfayı belirtiyor.
+Bu kod bloğunu mesela butona aktardığımızda tıklandığında bu sayfaya geçiş yapacaktır.
+
+Detaylı kod bloğu anlatımı :
+
+--------------------------------------------------------------------------------------------
+****************
+Navigator.push(context, MaterialPageRoute(builder: (context) => SayfaA() ));
+****************
+Kod bloğunu kullandığımız zaman SayfaA'ya gider fakat sol üstte geri dönme butonu oluşturur.
+
+--------------------------------------------------------------------------------------------
+****************
+Navigator.pop(context);
+****************
+Kod bloğunu kullandığımız zaman geldiğimiz sayfaya geri dönmemizi sağlar.
+
+--------------------------------------------------------------------------------------------
+****************
+Navigator.of(context).popUntil((route) => route.isFirst);
+****************
+Kod bloğunu kullandığımız zaman homePage yani anasayfaya döner ve geri dönüş butonu oluşturmaz
+sanki ilk defa uygulamayı açmışız gibi olur.
+
+
+
+
