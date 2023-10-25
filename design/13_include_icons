@@ -1,0 +1,36 @@
+Android cihazlar için default icon kullanımı yuvarlak,
+512x512 boyutlarında olması isteniyor.
+
+IOS cihazlar için default icon kullanımı radyuslu karedir.
+1024x1024 boyutlarında olması isteniyor.
+
+---------------------------------------------------------------
+Projeye eklenmesi:
+
+*İlk olarak icons isimli bir klasör oluşturup içerisine android
+ve ios için iconlarımızı uygun formata getirip aktarıyoruz.
+
+**************************************************************
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_icons:
+    ios: true
+    android: true
+    image_path: "icons/iosicon.png"
+    image_path_android: "icons/androidicon.png"
+**************************************************************
+
+pubspec dosyamızın içerisinde yukarıdaki bölümü
+bulup kopyala yapıştır yapıyoruz ve pub get'e tıklıyoruz.
+
+Daha sonra aşşağıdan terminal'i açıyoruz, vereceğim bu
+kodu yapıştırıp enter'a basıyoruz.
+********************************************************************
+Terminal kodu :flutter packages pub run flutter_launcher_icons:main
+********************************************************************
