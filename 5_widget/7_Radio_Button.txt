@@ -1,0 +1,13 @@
+Radio Button kullanımı:
+-----------------------------
+	+Kullanıcıya tek bir seçim yaptırmak istediğimiz zaman kullandığımız butondur.
+	+Tek bir seçim yaptırabilmek için öncelikle int türünde ve ilk değeri 0 olan bir değişken tanımlaması
+yapmamız gerekmektedir. Bunun amacı mesela 1.buttonun değeri 1 ,2-2,3-3 olduğunda onun seçili olduğunu 
+anlayabilmek. radioDeger isimli int türündeki ilk değeri 0 olan değişkenimizi tüm radioListTile 'larımızın 
+groupValue değerine atıyoruz ve value değerlerine de kendi aktif olduklarında kullanmak istediğimiz değerleri
+veriyoruz. Mesela 1 olduğunda value beşiktaş seçilmiş olacak,2 seçildiğinde galatasaray gibi.
+
+	Son olarak activeColor ile de renk değişimi yapıp özelleştirdik.
+
+
+Bu widget ile kullanıcıya birden fazla seçenek arasından tek bir seçim yapma zorunluluğu getirmiş olduk.
