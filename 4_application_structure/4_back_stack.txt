@@ -1,0 +1,13 @@
+Sayfalar arası geçiş yaptıktan sonra sol üstteki geri tuşuyla veya fiziksel olarak cihazın sahip olduğu geri tuşu ile
+istediğimiz sayfaya geçiş yapmasını yapılandırabilmek için back-stack den faydalanıyoruz.
+
+
+Mesela anasayfadan bir sayfaya geçiş yaptık, daha sonra geçiş yaptığımız sayfadan da başka bir sayfaya geçiş yaptık.
+Back Stack aracılığı ile dilersek son gittiğimiz sayfadan geri tuşuna bastığımızda direk olarak anasayfaya geçerek
+aradaki sayfayı kuyruktan çıkarabiliriz.
+
+Kullanımı:
+
+Normalde geçiş yaparken Navigator.push kullanıyoruz, şimdi ise kuyruktan çıkmasını istediğimiz sayfaya gidip;
+
+Navigator.pushReplacement 'e çevirmemiz yeterli olacaktır.
