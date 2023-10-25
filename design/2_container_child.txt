@@ -1,0 +1,62 @@
+*Görsel nesneler için alan oluşturmak ve bu alan
+ile görsel nesneye özellikler vermek için kullanılır.
+
+-Container özellikleri:
+	+width		--> genişlik
+	+height		--> yükseklik
+	+color		--> renk
+	+child		--> başka widget eklemek için mesela TEXT.
+	+margin		--> etrafındaki boşluk
+	+decoration	--> tüm dekorasyon işlemleri için
+
+---------------------------------------------------------------------------------------------
+*margin alt işlemleri:
+	+const 		--> Sabit değişmez yapmak
+	+EdgeInsets	--> Boşluğun nerden olacağını belirleme
+	+all		--> Tüm kenarlardan
+	+only		--> Sadece istenilen kenarlardan boşluk
+vermek için kullanılır. top->üst , bottom->alt , left->sol , right->sağ
+---------------------------------------------------------------------------------------------
+*decoration alt işlemleri:
+	+BoxDecoration	--> Container'ımızı bir kutu olarak düşünüyoruz
+ve bu box'ın yani kutunun dekorasyonunu yapmak için bu kodu kullanıyoruz.
+		+color		--> Kutumuzun rengi
+		+border		--> Kutumuzun kenarlığı
+			-Border.all diyerek tüm kenarlar için olmasını sağlıyoruz.
+				+color --> renk veriyoruz.
+				+width --> kenarlığın kalınlığını veriyoruz.
+		+borderRadius	--> Kutumuzun kenarlığının radyantı
+			-BorderRadius.all diyerek tüm kenarları seçiyoruz.
+				+Radius.circular diyerek radyusların kalınlığını ayarlıyoruz.
+---------------------------------------------------------------------------------------------
+
+ÖRNEK KODLAMA
+
+********************************************************************************************
+  body:
+        Row(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(top: 50.0,left: 100.0),
+              width: 200,
+              height: 200,
+              child: Center(
+                child: Text("Naber"),
+
+              ),
+              decoration: BoxDecoration(
+                color: Colors.cyanAccent,
+                border: Border.all(
+                    color: Colors.black,
+                    width: 2.0,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(30.0))
+              ),
+            ),
+          ],
+        ),
+********************************************************************************************
+
+
+
+
