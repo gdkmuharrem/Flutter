@@ -1,0 +1,49 @@
+1- Visibility : 
+	- İçerisindeki widget'i görünür veya görünmez hale getirmektedir.
+	- Kullanımı : 
+		+ build widgetinin öncesine bool türünde bir değişken atanır.
+		+ Visibility içerisinde visible özelliğine değişken aktarılır.
+	- Yukarıda anlatılan kullanım ile eğer değişkenimizin değeri;
+		false ise =>	görünmez,
+		true ise  =>	görünür.
+
+2- Ternary Koşul : 
+	- İçerisindeki widget'in tüm özelliklerini false veya true değerlerine
+	göre istenen hale getirmektedir.
+	
+	- Kullanımı : 
+		+ build widgetinim öncesine bool türünde bir değişken atanır.
+		+ Özellikleri değiştirilmek istenen widget içerisinde önce değişken
+		tanımlanır ve sonrasına soru işareti konarak 2 türlü tanımlama
+		yapılır ve bu sayede widgetin özelliklerinde değişiklik uygulanır.
+		
+		+ Örneğin bir Text'in özelliklerini değiştirmek istersek kullanımı
+		aşşağıdaki gibi olmalıdır.
+		
+		+ Text(kontrol ? "Doğru" : "Yanlış",
+		  style: TextStyle(
+		  	color: kontrol ? Colors.blue : Colors.red,
+			fontSize: kontrol ? 20 : 50,
+			fontWeight: kontrol ? FontWeight.normal : FontWeight.bold,
+		  ),
+		),
+
+	- Yukarıda anlatılan kullanım ile eğer değişkenimizin değeri;
+		false ise =>	Ekrana kırmızı renginde, 50 kalınlığında, kalın bir
+				"Yanlış" yazılacak.
+
+		true ise  =>	Ekrana mavi renginde, 20 kalınlığında, normal bir
+				"Doğru" yazılacak.
+
+3- Flutter Kod bloğu içerisinde Dart kodlarını yazma:
+	- Flutter kodlarının arasına aşşağıda kullanımını belirttiğim şekilde
+	parantezlerle bir yazım yapar isek içerisinde Dart kullanabiliriz.
+	Yani sadece widgetlar'a bağlı kalmadan if,else yapısı gibi bir çok yapıdan
+	faydalanabiliriz.
+	 
+	- Kullanımı:
+		((){
+			Bu şekilde parantezleri koyduktan sonra buraya yazdığımız
+			kodlar dart ile çalıştırılacaktır. Widget'lardan bağımsız 
+			olacaktır.
+		}())
