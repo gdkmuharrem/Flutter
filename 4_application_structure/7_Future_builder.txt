@@ -1,0 +1,52 @@
+
+	*Asenkron işlemler için kullanılan bir yapıdır.
+	*async özelliği olan fonksiyonu kullanırken "await" özelliği ile sadece
+	yapması gereken işlemi bitirene kadar çalışmasını sağlarız.
+	* Fakat "await" kullanmak için async özelliği olan fonksiyon içinde olmamız
+	gereklidir.
+	*async özelliği olan fonksiyonu widget içinde kullanmak istediğimizde
+	async özelliği olması gerekmektedir. Bu özellik widgetlarda yoktur !!!!
+	*Widget içinde async özelliğini kullanmak için "Future Builder" yapısı
+	gereklidir.
+
+	Kullanmak istediğimiz metod işlemini bitirmeden arayüz gelirse metotda 
+problemler çıkabileceği için FutureBuilder yapısı ile ilk önce metodun işlevini 
+bitirmesini sonra arayüzün açılmasını sağlıyoruz.
+
+
+Kullanımı : 
+ 1- Future yapısı ile asenkron çalışacak olan metodumuzu yazıyoruz. Bu kodlama 
+işlemini scaffold üstünde yapıyoru:
+----------------------------------------------------
+  Future<int> faktoriyelHesapla(int sayi) async {
+    int sonuc = 1;
+    for(var i=1;i<=sayi;i++){
+      sonuc = sonuc*i;
+    }
+    return sonuc;
+  }
+----------------------------------------------------
+
+2-body içerisinde sayfa yapımızın içeriğine FutureBuilder yapımızı tanımlıyoruz ve
+yukarıda tanımladığımız metoda göre koşul ifadeleri yazıp yapmak istediğimiz işleme
+göre yönlendiriyoruz. Bu sayede daha verimli bir şekilde metodumuzu kullanabilmiş
+olduk:
+----------------------------------------------------
+
+            FutureBuilder<int>(
+              future: faktoriyelHesapla(5),
+              builder: (context,snapshot){
+                if (snapshot.hasError){
+// Veriyle alakalı herhangi bir problem olup olmadığını kontrol ediyoruz.
+                  print("Hata Sonucu : ${snapshot.error}");
+                }
+                if (snapshot.hasData){
+// Bir problem yok ise veriyi ekrana basıyoruz.
+                  return Text("Sonuç : ${snapshot.data}");
+                }
+                else{
+// Veri yoksa ya da ulaşamıyorsak ekrana gösterilecek veri yok basıyoruz.
+                  return Text("Gösterilecek Veri Yok");
+                }
+              }
+            ),
