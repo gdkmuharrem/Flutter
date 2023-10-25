@@ -1,0 +1,63 @@
+*************************
+      SizedBox
+*************************
+*Herhangi bir görsel Nesneyi tekrar boyutlandırmamızı sağlıyor.
+*Kullanımı:
+	Container(width,...),	bu şekilde kullanmak yerine;
+	
+	SizedBox(
+	width:200,
+	height:200,
+	child: Container(width:50,height:50),
+	),
+	
+	Bu şekilde contaier'ı veya boyutunu değiştirmek istediğimiz nesneyi yerleştiriyoruz.
+	SizedBox kullanımı bu kadar kolay.
+
+*SizedBox başka bir özelliği de boşluk oluşturmamızı sağlayabilir.Yani mesela 2 container arasına sizedBox koyarsak
+ve yükseklik genişlik verirsek içeriğinde başka bir container olmaz ise bu 2 container arasına boşluk koymuş oluruz.
+
+
+*************************
+        Spacer
+*************************
+Row veya Column 'un
+eğer mainAxisSize değeri max ise 
+içeriğindeki tüm boşlukları birleştirip toplu bir boşluk oluşturmaya yarar.
+
+Spacer(flex:30), Şeklinde içerisine flex dersek var olan boşlukların %30'unu orada toplar.
+
+*************************
+        Padding
+*************************
+*Padding, widget etrafında boşluk oluşturmak için kullanılıyor.
+*EdgeInsets.all() özelliği bütün kenarlara aynı oranda boşluk verir.
+*EdgeInsets.only() özelliği ile ise istediğimiz kenara istediğimiz kadar boşluk verebiliriz.
+
+
+********************************************************************************************
+                              ÖRNEK KODLAMA
+********************************************************************************************
+
+body: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0,top: 10.0,bottom: 10.0,right: 5.0),
+            child: Container(width: 100,height: 100,color: Colors.red,),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left:5.0,top: 10.0,bottom: 10.0,right: 5.0),
+            child: Container(width: 100,height: 100,color: Colors.yellow,),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 5.0,top: 10.0,bottom: 10.0,right: 20.0),
+            child: Container(width: 100,height: 100,color: Colors.blue,),
+          ),
+        ],
+      ),
+*********************************************************************************************
+
+
+
+
+
