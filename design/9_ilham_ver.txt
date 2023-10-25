@@ -1,0 +1,78 @@
+------------------------------------------------------------------------------------------------------
+Daha önceki eğitimlerde edindiğimiz bilgileri birleştirerek ilham ver isimli bir uygulama yapıyoruz.
+------------------------------------------------------------------------------------------------------
+
+ilk olarak "var" yani tür belirtmeden "ekranBilgisi" isimli bir değişken oluşturuyoruz.
+Bu değişkenimize değer olarak "MediaQuery.of(context)" atayarak dinamik olarak ekranımızın boyutlarını aktarıyoruz.
+
+"final double" ile "ekranYuksekligi" ve "ekranGenisligi" isimli iki değişken daha oluşturarak bu değişkenlere;;
+"ekranBilgisi.size.height" ve "ekranBilgisi.size.width" ile yukseklik ve genislik bilgilerimizi aktarıyoruz.
+
+Yukarıdaki bu işlemi yapma sebebimiz kod bloğumuzun herhangi bir yerinde değişkenlerimiz ile bir boyutlandırma yaparak 
+uygulama tasarımımızı responsible yapabilmek.
+-------------------------------------------------------------------------------------------------------------------------
+Daha önce öğrendiğimiz gibi kısaca bahsetmek gerekirse bir resimler dosyası oluşturup içerisine resmimizi aktarıyoruz ve
+pubspec dosyamızın içeriğindeki asseti düzenliyoruz ve body'nin en üstünde resmimizi padding ve sizedbox ile ekliyoruz.
+Altına açıklama babında bir metin ekliyoruz.
+
+Altına bir spacer ile boşluk bıraktıktan sonra yine padding ve sizedbox özelliklerimizden yararlanarak bir metin ekliyoruz.
+
+Son olarak yeni öğreneceğimiz bir özellik ile button ekliyoruz.
+---------------------------------------------------------------------------------------------------------------------------
+
+********************************************************************************************
+                              ÖRNEK KODLAMA
+********************************************************************************************
+var ekranBilgisi = MediaQuery.of(context);
+    final double ekranYuksekligi = ekranBilgisi.size.height;
+    final double ekranGenisligi = ekranBilgisi.size.width;
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: ekranYuksekligi/80,bottom: ekranYuksekligi/80),
+              child: SizedBox(
+                  width: ekranGenisligi/2,
+                  child: Image.asset("resimler/dijital2x.jpg")),
+            ),
+            Text("Geleceğin Dünyası",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: ekranGenisligi/19,
+                  color: Colors.purpleAccent),
+            ),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.only(left: ekranGenisligi/20,right: ekranGenisligi/20),
+              child: Text("Dünyayı değiştirebilecek insanlar, onu değiştirebilecek kadar cesur insanlardır.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: ekranGenisligi/20,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.teal,
+                ),
+              ),
+            ),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.only(bottom: ekranYuksekligi/10),
+              child: SizedBox(
+                width: ekranGenisligi/3,
+                height: ekranYuksekligi/15,
+                child: ElevatedButton(
+                  onPressed: (){print("İLHAM VERİLDİ");},
+                  child: Text("İLHAM VER",style: TextStyle(color: Colors.purpleAccent,fontSize: ekranGenisligi/30),),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.white70),
+
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
