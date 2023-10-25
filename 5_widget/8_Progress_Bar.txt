@@ -1,0 +1,20 @@
+progress bar kullanimi:
+-------------------------
+Kullanıcıya o an bir yükleme olduğuna dair bilgi niteliğinde gösterebileceğimiz bir animasyondur.
+Bu animasyonu istediğimiz zaman görünür yapabilmek istediğimiz zaman gizleyebilmek için "Visibility" 
+kullanacağız ve bunun için öncelikle bool türünde progressBarGorun isimli bir değişken oluşturuyoruz.
+
+Sonra 
+CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.black),),
+kod bloğu ile progress barımızı rengi siyah olacak şekilde ayarlıyoruz.
+
+Daha sonra alt+enter tuşlaması ile yukarıdaki kod bloğuna widget ekleme kısmına gelip Visibility widgetini
+ekliyoruz. visible değerine daha önce tanımladığımız progressBarGorun değişkenini aktarıyoruz.
+
+
+Son olarak 2 tane buton oluşturup bunlardan birini başlat diğerini bitir olarak ayarlıyoruz.
+ve bunlara onpressed içerisinde setState ile progressbarGorun değişkenini birinde true diğerinde false
+yapıyoruz.
+
+Bu sayede başlata tıkladığımız zaman progress bar siyah olarak görünüyo ve animasyonu dönmeye başlıyor,
+bitire tıkladığımız zaman ise progress bar gizleniyor.
