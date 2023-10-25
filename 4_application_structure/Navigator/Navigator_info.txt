@@ -26,6 +26,6 @@ Navigator.of(context).popUntil((route) => route.isFirst);
 Kod bloğunu kullandığımız zaman homePage yani anasayfaya döner ve geri dönüş butonu oluşturmaz
 sanki ilk defa uygulamayı açmışız gibi olur.
 
-
+Örnek kodlama klasör içinde mevcuttur.
 
 
