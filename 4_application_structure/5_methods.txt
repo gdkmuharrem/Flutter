@@ -1,0 +1,19 @@
+*Uygulama ilk açıldığı zaman initState() metodu ve build() metodu çalışır.
+build metodunu istersek defalarca tetikleyip yenileyebiliriz.
+
+*Uygulama fiziksel olan geri tuşuna basılıp telefon anaekranına dönüldüğü zaman uygulama sanki kapanmış gibi davranır.
+Bu sırada =>	inactive(),paused() ve detached() metodları çalışır. Uygulama tekrar açılmak istendiğinde initstate ve 
+build metodları tekrar çalışır.
+
+*Eğer fiziksel olan orta tuşuna basılıp telefon ana ekranına dönülürse bu sırada =>	inactive ve paused metodları 
+çalışır ve uygulama arka planda çalışır halde bekler. Uygulama tekrar açılmak istendiğinde resumed() metodu çalışır.
+
+*Eğer fiziksel olan kare tuşuna basılıp telefon ana ekranına dönülürse bu sırada =>	inactive ve paused metodları 
+çalışır ve uygulama arka planda çalışır halde bekler. Uygulama tekrar açılmak istendiğinde resumed() metodu çalışır.
+
+*Eğer bir sayfaya gidip tekrar geri gelmek için geri tuşuna basarsak 2 metod çalışmaktadır. =>	deactivate,dispose metodları
+
+
+initState() , build(), inactive(), paused(), detached(), resumed(), deactivate(), dispose()
+
+
