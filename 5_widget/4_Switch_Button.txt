@@ -1,0 +1,37 @@
+switch button kullanımı : 
+---------------------------
+	+Switch buttonlarımız 2 değer alabilmektedir. True ya da false. Açık ya da kapalı.
+	+İlk olarak bu değeri tutabilecek bool türünde bir değişken tanımlıyoruz.
+		bool switchKontrol = false;
+ilk değerini false verme sebebimiz ilk açıldığında hangi konumda olmasını istediğimize göre değişmekte.
+
+	+Sonra Switch tanımlamamızı yapıyoruz:
+		Switch(
+               	 	value: switchKontrol,
+			activeTrackColor: Colors.red,
+              	  	onChanged: (veri){
+                		setState(() {
+                 	   		switchKontrol = veri;
+                 	 	});
+                 	 	print("Switch : $veri");
+                	},
+            	),
+
+
+	+Switch buttonumuz default olarak bir value değeri ve bir de onChanged fonksiyonuna sahiptir.
+value ile değeri atanır, onChanged ile tıklandığında ne yapılacağı anlatılır. Biz value değerine daha önce
+oluşturduğumuz değişkeni yani false değerini aktardık ve butona tıklandığında her seferinde sayfayı yenilemesi
+için setState metodumuzu çağırdık. İçersinde tıklandığında oluşan veriyi false--> true ya da true --> false
+hangisi ise gelen veriyi de bir değişkene atadık ve bu değişkene ilk oluşturduğumuz değişkene atadık bu sayede
+tıklandığında olan son veri bizim değişkenimize aktarılmış oldu. Aynı zamanda print metodu ile de seri ekrana
+bu bilgiyi yazdık.
+
+	+activeTrackColor : Colors.red --> true olması durumunda switchin hareket eden arka planının hangi 
+						renkte olmasını istediğimizi tanımlıyoruz.
+	+activeColor:Colors.green --> true olması durumunda switchin hareket eden parçasının ucundaki noktanın
+						hangi renkte olmasını istediğimizi tanımlıyoruz.
+	
+	+inactiveTrackColor : Colors.yellow --> false olması durumunda switchin hareket eden arka planının hangi 
+						renkte olmasını istediğimizi tanımlıyoruz.
+	+inactiveThumbColor:Colors.black --> false olması durumunda switchin hareket eden parçasının ucundaki 
+						noktanın hangi renkte olmasını istediğimizi tanımlıyoruz.
