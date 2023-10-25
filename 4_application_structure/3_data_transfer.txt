@@ -1,0 +1,67 @@
+Sayafalar arası veri transferi yapabilmek için veri göndermek istediğimiz sayfanın içerisinde 
+göndermek istediğimiz verileri tutacak değişkenler oluşturmamız ve bu değişkenlere constructor
+tanımlaması yapmamız gerekmekte.
+
+*Veri transferi yapmak istiyor isek sayfalar arasında bir geçiş olması gerekmekte.Bir önceki 
+derste işledik Navigator aracılığı ile geçiş yapıyoruz.
+*Sonra veri transfer etmek istediğimiz sayfayı değişken ve constructor ile veri almaya hazır
+hale getiricez.
+*Son olarak verilerimizi göndereceğiz.
+
+Kullanımı:
+-----------
+  String isim;
+  int yas;
+  double boy;
+  bool bekarMi;
+  
+  SayfaA({
+    required this.isim,
+    required this.yas,
+    required this.boy,
+    required this.bekarMi,
+  });
+
+Yukarıdaki gibi öncelikle değişkenlerimizi tanımlıyoruz ve onları constructor içine alıyoruz.
+Sonra main sayfamıza gelip :
+
+Navigator.push(context, MaterialPageRoute(builder: (context)=> SayfaA(
+                      isim: "Muharrem",
+                      yas: 21,
+                      boy: 192,
+                      bekarMi: false,
+                  )));
+şeklinde normalde sadece sayfadan sayfaya geçerken aynı zamanda constructor içinde tanımladığımız
+verileri de beraberinde transfer ediyoruz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
