@@ -1,0 +1,25 @@
+Elevated Button --> default olarak borderlı gelen etrafı çizili olan button.
+Text Button --> Metin şeklinde diğer normal metinler gibi olan button.
+
+İkisine de istersek style ekleyebiliyoruz. Yönetimi:
+------
+ElevatedButton (
+	child:Text("Elevated Button"),
+	style:Elevated.styleFrom(
+		backgroundColor : Colors.pink,	//Arka plan rengini ayarlıyoruz.
+		shadowColor: Colors.black,	//Etrafına gölge ayarlıyoruz.
+		elevation: 30,			//Gölgenin derinliğini ayarlıyoruz.
+		shape: RoundedRectangleBorder(	//border vermeyi,çerçevesini vb. ayarlıyoruz.
+			borderRadius:BorderRadius.all(Radius.circular(10)), // 10 px border verdik tüm yönlerden.
+			side: BorderSide(color:Colors.red),	//borderin çerçevesine renk verdik.
+		),
+	),
+	onPressed: (){
+		print ("Elevated Tıklandı.");
+	},
+)
+
+aynı işlemler text button içinde elevated olan yerleri sadece text olarak
+değiştirdiğimizde uygulanmakta.
+
+
