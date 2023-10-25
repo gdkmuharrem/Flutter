@@ -1,0 +1,152 @@
+Çoklu Ekran desteği ne demek :
+	Her cihazın ekran boyutları farklı mesela bir tablet ile telefonun boyutları farklı 
+aynı şekilde telefonların kendi aralarında bile çok fazla farklı ekranlar bulunmakta.
+
+Çoklu ekran desteği iki şekilde olmakta,
+1-Her cihaz türü için ayrı ayrı tasarım yapmak.
+2-Tek bir tasarım yapıp tüm cihazlara uyarlamak.(Mesela telefon için oluşturulan tasarım tablette daha büyük gözükecek.)
+
+-*----*------*-------*---------*----------*---------*-----------*--------------*-----------*------------*------------*-------*--
+1.Yöntem : Her ekrana göre Tasarım Yapma
+------------------------------------------
+*Hangi ekran boyutunda olduğumuzu LayoutBuilder yapısı ile öğrenebiliriz.
+*Boyuta göre tasarım oluşturarak kullanıcıya tasarımı gösterebiliriz.
+*Eğer resim kullanıyorsak aynı resmi ekran boyutlarına göre farklı boyutlarda
+oluşturmamız tasarım için faydalı olmaktadır.
+*Büyük çözünürlükteki resmi daha büyük ekranlarda, küçük çözünürlükteki resmi
+daha küçük ekranlarda gösterebiliriz.
+*Resimlere isim verilirken çözünürlük ile ilgili bir isimlendirme yapmak
+iyi olacaktır.
+
+Proje içerisinde kullanımı:
+----------------------------------
+Daha önce projeye resim ekleme hakkında çalışmalarımız olmuştu notları da
+bulunmakta. Bu konuda bir eksiğimiz mevcutsa önce oraya bakmalıyız.
+
+İlk olarak Telefon ve Tablet boyutları için ayrı ayrı 2 tane class yazmamız
+gerekiyor. 
+Class yazmanın kolay yolu ise : stless yazıp enter'a basmak. Bu sayede
+bize class'ı hazır halde veriyor ve bizden sadece isim bekliyor.
+
+Classlarımızı ayarlarken estetik açıdan Center ve mainAxis atarak ekranı
+ortalamayı hedefliyoruz.
+Daha sonra ise eğer classımızı tabletler için yazıyor isek ona uygun resmi ve
+yazı boyutunu seçip uygun tasarımlarımızı yapıyoruz, eğer telefon ise aynı
+şekilde aynı resim ve yazıların tasarımların daha küçük boyutlu olanlarını
+kullanıyoruz.
+
+Son olarak bu yazmış olduğumuz classları body içerisinde yani
+proje üzerinde uygulamaya geldi sıra.
+
+body'ye gidip ilk olarak LayoutBuilder yapısını kullanıyoruz. kod dizaynı
+aşağıda anlatacağım gibi olmalı.
+
+*************************************************************************
+body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints){
+          if(constraints.maxWidth<600){
+            return TelefonTasarim();
+          }
+          else{
+            return TabletTasarim();
+          }
+        }
+      ),
+*************************************************************************
+Şimdi ilk olarak LayoutBuilder yapımızı yazıyoruz ve içerisine bir builder
+tanımlamamız gerekiyor. 
+BuildContext türünde bir context ve BoxConstraints türünde bir constraints 
+tanımlaması yapıyoruz ve builder'ımızın içerisine bir if-else yapısı tanımlıyoruz. 
+Bu if-else yapısına göre ekran genişliği 600'den küçük olan tüm cihazlar için 
+TelefonTasarimi() isimli class çağırılacak,
+diğer tüm cihazlar için ise TabletTasarimi() isimli class çağırılacak demek.
+Bu da demek oluyor ki telefon ile tablete ayrı ayrı tasarım yapmış olduk.
+
+context --> sınıflar arasında geçişlerde kullanılan yapıdır.
+
+-*----*------*-------*---------*----------*---------*-----------*--------------*-----------*------------*------------*-------*--
+2-Tasarımı Ekrana Göre Oranlama:
+--------------------------------------------------------------------
+*Tasarımda sabit olarak oluşturduğumuz genişlik,yükseklik,boşluk miktarı
+gibi sayıları ekranın boyutuna oranlayarak işlem yapabiliriz. Bu şekilde
+yapılan oranlama DİNAMİK olarak boyutlama sağlamaktadır.
+
+Örneğin : Butonun genişliği ekranın genişliğinin yarısı kadar olsun,
+veya resmin genişliği butonun 2 katı kadar olsun diyebiliriz. Bu sayede ekran
+büyüyüp küçüldüğünde aynı oranda buton ve resmin de büyüklükleri değişecektir
+-*----*------*-------*---------*----------*---------*-----------*--------------*-----------*------------*------------*-------*--
+
+********************************************************************************************
+                              1.Yöntem ÖRNEK KODLAMA
+********************************************************************************************
+body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints){
+          if(constraints.maxWidth<600){
+            return TelefonTasarim();
+          }
+          else{
+            return TabletTasarim();
+          }
+        }
+      ),
+
+class TabletTasarim extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset("resimler/dijital2x.jpg"),
+          Text("DİJİTAL DÜNYANIN GELİŞİMİ",style: TextStyle(fontSize: 30.0,color: Colors.red),),
+        ],
+      ),
+    );
+  }
+}
+class TelefonTasarim extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset("resimler/dijital1x.jpg"),
+          Text("DİJİTAL DÜNYANIN GELİŞİMİ",style: TextStyle(fontSize: 20.0,color: Colors.red),),
+        ],
+      ),
+    );
+  }
+}
+
+********************************************************************************************
+                              2.Yöntem ÖRNEK KODLAMA
+********************************************************************************************
+body: Center(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0,bottom: 10.0),
+              child: SizedBox(
+                  width: 300,
+                  height: 200,
+                  child: Image.asset("resimler/flutter.png"),
+              ),
+            ),
+            Container(width: 400,height: 90,color: Colors.greenAccent,),
+            Text("Merhaba",style: TextStyle(fontSize: 20.0),),
+          ],
+        ),
+      )
+
+
+
+
+
+
+
+
+
+
