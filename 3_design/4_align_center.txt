@@ -1,6 +1,6 @@
-**********************
+***********************
       Center
-**********************
+***********************
 *Widgetları içinde bulunduğu alana göre kendisini yatay ve dikeyde merkezler.
 
 *Kullanımı :
