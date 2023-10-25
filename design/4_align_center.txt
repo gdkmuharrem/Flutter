@@ -1,0 +1,74 @@
+**********************
+      Center
+**********************
+*Widgetları içinde bulunduğu alana göre kendisini yatay ve dikeyde merkezler.
+
+*Kullanımı :
+		child:Center(
+			child:Text("Merhaba"),
+		),
+
+Texti ortalar.
+
+***** Row ortalama:
++Daha önce row ve column beraber kullanımında iç içe bir yapı oluşturup column içinde row kullanarak containerları ortalamıştık.
+Fakat bu kadar zahmete girmeye gerek kalmadan 
+		
+		body:Center
+	
+yazarak column'a gerek kalmadan tüm işlemleri halledebiliyoruz.
+
+Kullanımı şu şekilde :
+	body:Center yazıyoruz, 
+	Row içerisinde mainAxisAlignment.center koyuyoruz.
+	
+Bu sayede hem dikeyde hem yatayda ortalamış oluyoruz.
+
+
+**********************
+      Align
+**********************
+
+*İçinde bulunduğu alana göre hizalama yapar.
+*Center yapısının daha detaylı hali olarak düşünülebilir.
+
+*Bazı özellikleri :
+	+topcenter		-->	üste yapıştır ve ortala
+	+topleft		-->	üste yapıştır ve sola yasla
+	+topright		-->	üste yapıştır ve sağa yasla
+	+center			-->	ortala
+	+centerright		-->	ortala ve sağa yasla
+	+centerleft		-->	ortala ve sola yasla
+	+bottomcenter		-->	alta yapıştır ve ortala
+	+bottomleft		-->	alta yapıştır ve sola yasla
+	+bottomright		-->	alta yapıştır ve sağa yasla
+
+*Kullanımı:
+	child: Align(
+		alignment: Alignment.bottomleft,
+		child: Text("Merhaba"),
+	),
+
+!!!! Row'un kendisini sadece MainAxisAlignment ile hizalayabiliriz.!!!!
+
+ÖRNEK KODLAMA
+*************************************************************************
+body: Align(
+        alignment: Alignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:  [
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.red,
+              child: Align(
+                  alignment: Alignment.center,
+                  child: Text("Naber Güzelim")
+              ),
+            ),
+          ],
+        ),
+      ),
+*************************************************************************
+
